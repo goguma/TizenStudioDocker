@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER SeongWon Cho <seongwon79@hanafos.com>
+LABEL maintainer="seongwon79@hanafos.com"
 
 RUN apt-get update
 RUN apt-get install -y sudo wget zip libwebkitgtk-1.0-0 libgtk2.0-0:amd64 libxtst6:amd64 rpm2cpio cpio cpio python2.7 gettext make libssl1.0.0
@@ -20,7 +20,6 @@ RUN java -version
 WORKDIR /opt
 RUN wget https://download2.gluonhq.com/openjfx/11.0.2/openjfx-11.0.2_linux-x64_bin-sdk.zip
 RUN unzip openjfx-11.0.2_linux-x64_bin-sdk.zip
-#RUN cd javafx-sdk-11.0.2
 RUN cp -arf /opt/javafx-sdk-11.0.2/lib/* /opt/jdk-10.0.2/lib/
 
 
@@ -41,5 +40,4 @@ RUN cp /etc/skel/.bashrc /home/developer/
 RUN wget http://download.tizen.org/sdk/Installer/tizen-studio_3.3/web-ide_Tizen_Studio_3.3_ubuntu-64.bin
 RUN chmod a+x web-ide_Tizen_Studio_3.3_ubuntu-64.bin
 RUN mkdir -p /home/developer/workspace
-#CMD /home/developer/chmod a+x web-ide_Tizen_Studio_3.3_ubuntu-64.bin
 
